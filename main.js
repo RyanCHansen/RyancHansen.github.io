@@ -296,7 +296,7 @@ Acid.prototype.draw = function () {
 
 
 AM.queueDownload("./images/newtrees.jpg");
-AM.queueDownload("./images/newtrees1.jpg");
+//AM.queueDownload("./images/newtrees1.jpg");
 AM.queueDownload("./images/giphy.png");
 AM.queueDownload("./images/boomer.png");
 AM.queueDownload("./images/goku.png");
@@ -317,7 +317,7 @@ AM.downloadAll(function () {
     gameEngine.start();
 
     gameEngine.addEntity(new Background(gameEngine, AM.getAsset("./images/newtrees.jpg")));
-    gameEngine.addEntity(new Background1(gameEngine, AM.getAsset("./images/newtrees1.jpg")));
+    //gameEngine.addEntity(new Background1(gameEngine, AM.getAsset("./images/newtrees1.jpg")));
     gameEngine.addEntity(new Giphy(gameEngine, AM.getAsset("./images/giphy.png")));
     gameEngine.addEntity(new Boom(gameEngine, AM.getAsset("./images/boomer.png")));
     gameEngine.addEntity(new Goku2(gameEngine, AM.getAsset("./images/giphygoku.png")));
