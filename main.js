@@ -1,6 +1,6 @@
 ﻿var AM = new AssetManager();
-//var BackgroundX = 0;
-//var Background1X = 0;
+var BackgroundX = 0;
+var Background1X = 0;
 
 
 function Animation(spriteSheet, frameWidth, frameHeight, sheetWidth, frameDuration, frames, loop, scale) {
@@ -70,27 +70,27 @@ Background.prototype.update = function () {
     
 };
 
-// // no inheritance
-// function Background1(game, spritesheet) {
-//     this.x = 2078;
-//     this.y = 0;
-//     this.speed = -300;
-//     this.spritesheet = spritesheet;
-//     this.game = game;
-//     this.ctx = game.ctx;
-// };
+// no inheritance
+function Background1(game, spritesheet) {
+    this.x = 2078;
+    this.y = 0;
+    this.speed = -300;
+    this.spritesheet = spritesheet;
+    this.game = game;
+    this.ctx = game.ctx;
+};
 
-// Background1.prototype.draw = function () {
-//     this.ctx.drawImage(this.spritesheet, this.x, this.y);
-//     Background1X = this.x;
-// };
+Background1.prototype.draw = function () {
+    this.ctx.drawImage(this.spritesheet, this.x, this.y);
+    Background1X = this.x;
+};
 
-// Background1.prototype.update = function () {
+Background1.prototype.update = function () {
     
-//      this.x += this.game.clockTick * this.speed;
+     this.x += this.game.clockTick * this.speed;
     
-//     if (this.x < -2083) this.x = BackgroundX + 2075;
-// };
+    if (this.x < -2083) this.x = BackgroundX + 2075;
+};
 
 
 
@@ -296,7 +296,7 @@ Acid.prototype.draw = function () {
 
 
 AM.queueDownload("./images/newtrees.jpg");
-//AM.queueDownload("./images/newtrees1.jpg");
+AM.queueDownload("./images/newtrees1.jpg");
 AM.queueDownload("./images/giphy.png");
 AM.queueDownload("./images/boomer.png");
 AM.queueDownload("./images/goku.png");
@@ -317,7 +317,7 @@ AM.downloadAll(function () {
     gameEngine.start();
 
     gameEngine.addEntity(new Background(gameEngine, AM.getAsset("./images/newtrees.jpg")));
-    //gameEngine.addEntity(new Background1(gameEngine, AM.getAsset("./images/newtrees1.jpg")));
+    gameEngine.addEntity(new Background1(gameEngine, AM.getAsset("./images/newtrees1.jpg")));
     gameEngine.addEntity(new Giphy(gameEngine, AM.getAsset("./images/giphy.png")));
     gameEngine.addEntity(new Boom(gameEngine, AM.getAsset("./images/boomer.png")));
     gameEngine.addEntity(new Goku2(gameEngine, AM.getAsset("./images/giphygoku.png")));
